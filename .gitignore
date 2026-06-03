@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+*.local
+
+# Firebase
+firebase-debug.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
