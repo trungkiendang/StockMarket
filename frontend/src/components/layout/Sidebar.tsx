@@ -24,7 +24,7 @@ export default function Sidebar({ open, onClose }: Props) {
       )}
       <aside className={`
         fixed lg:sticky top-0 left-0 z-40 h-screen
-        w-56 bg-gray-900 border-r border-gray-800 flex flex-col
+        w-48 sm:w-56 lg:w-64 bg-gray-900 border-r border-gray-800 flex flex-col
         transition-transform duration-200
         ${open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
