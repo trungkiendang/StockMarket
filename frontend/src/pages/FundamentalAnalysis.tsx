@@ -46,7 +46,7 @@ export default function FundamentalAnalysis({ symbol: propSymbol }: Props) {
         </form>
       </div>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
         {[
           { label: 'P/E', value: ratios?.pe, color: ratios && ratios.pe < 15 ? 'text-market-up' : ratios && ratios.pe > 30 ? 'text-market-down' : 'text-yellow-400' },
           { label: 'P/B', value: ratios?.pb },
@@ -66,7 +66,7 @@ export default function FundamentalAnalysis({ symbol: propSymbol }: Props) {
       {latest && (
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
           <h3 className="text-sm font-medium text-gray-300 mb-4">Báo cáo tài chính gần nhất ({latest.period})</h3>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
             {[
               { label: 'Doanh thu', value: formatMarketCap(latest.revenue) },
               { label: 'Lợi nhuận gộp', value: formatMarketCap(latest.grossProfit) },

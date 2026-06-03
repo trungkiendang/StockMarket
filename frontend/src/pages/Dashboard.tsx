@@ -33,7 +33,7 @@ export default function Dashboard() {
         <p className="text-sm text-gray-400">Cập nhật dữ liệu từ VNDirect</p>
       </div>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
         {indexes.map((idx) => (
           <div key={idx.symbol} className="bg-gray-900 rounded-xl border border-gray-800 p-4">
             <div className="text-sm text-gray-400">{idx.name}</div>
@@ -45,8 +45,8 @@ export default function Dashboard() {
         ))}
       </div>
 
-      <div className="grid grid-cols-3 gap-6">
-        <div className="col-span-2 bg-gray-900 rounded-xl border border-gray-800 p-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="md:col-span-2 bg-gray-900 rounded-xl border border-gray-800 p-4">
           <h3 className="text-sm font-medium text-gray-300 mb-4">Heatmap vốn hóa theo ngành</h3>
           <HeatmapChart data={heatmapData} height={400} />
         </div>

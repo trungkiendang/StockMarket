@@ -59,23 +59,23 @@ export default function StockDetail() {
   const changePercent = latest && prev ? (change / prev.close) * 100 : 0
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
         <div>
           <div className="flex items-center gap-3">
-            <h2 className="text-2xl font-bold text-white">{symbol}</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">{symbol}</h2>
             <span className="text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded">HOSE</span>
           </div>
           {latest && (
-            <div className="flex items-center gap-3 mt-1">
-              <span className="text-3xl font-bold text-white">{formatPrice(latest.close)}</span>
-              <span className={`text-lg font-medium ${change >= 0 ? 'text-market-up' : 'text-market-down'}`}>
+            <div className="flex items-center gap-2 sm:gap-3 mt-1">
+              <span className="text-2xl sm:text-3xl font-bold text-white">{formatPrice(latest.close)}</span>
+              <span className={`text-base sm:text-lg font-medium ${change >= 0 ? 'text-market-up' : 'text-market-down'}`}>
                 {change >= 0 ? '+' : ''}{formatPrice(change)} ({formatPercent(changePercent)})
               </span>
             </div>
           )}
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-1.5 sm:gap-2">
           {(['1M', '3M', '6M', '1Y'] as const).map((r) => (
             <button
               key={r}
@@ -90,8 +90,8 @@ export default function StockDetail() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-6">
-        <div className="col-span-2 bg-gray-900 rounded-xl border border-gray-800 p-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="md:col-span-2 bg-gray-900 rounded-xl border border-gray-800 p-4">
           <CandlestickChart data={data} volumeData={volumeData} ma20={ma20} ma50={ma50} height={450} />
         </div>
         <div className="space-y-4">
@@ -120,7 +120,7 @@ export default function StockDetail() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
           <h3 className="text-sm font-medium text-gray-300 mb-3">RSI (14)</h3>
           <TechnicalIndicators

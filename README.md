@@ -1,18 +1,20 @@
 # StockViz - Phân Tích Chứng Khoán Việt Nam
 
-Hệ thống phân tích thị trường chứng khoán Việt Nam với biểu đồ nâng cao và Telegram Bot.
+Hệ thống phân tích thị trường chứng khoán Việt Nam với biểu đồ nâng cao và Telegram Bot.  
+**Demo:** https://trungkiendang.github.io/StockMarket/
 
-## 🚀 Tính năng
+## Tính năng
 
 - **8 trang chức năng**: Dashboard, StockDetail, TechnicalAnalysis, FundamentalAnalysis, Screener, Comparison, Watchlist, Alerts
 - **Biểu đồ nâng cao**: Candlestick (LW), Renko, Point & Figure, Heatmap Treemap, Volume Profile, RSI, MACD, MA, Bollinger Bands
 - **Telegram Bot**: 11 lệnh (giá real-time, watchlist, cảnh báo giá, top volume)
-- **Dữ liệu real-time**: VNDirect Open API + WebSocket
+- **Dữ liệu real-time**: VNDirect Open API (`api-finfo.vndirect.com.vn`)
 - **Dark theme**: UI tối ưu cho phân tích
+- **Responsive**: Hỗ trợ mobile và desktop
 
-## 🛠 Tech Stack
+## Tech Stack
 
-| Layer | Công nghệ |
+| Layer | Cong nghe |
 |-------|-----------|
 | Frontend | React 19 + TypeScript + Vite + Tailwind CSS v4 |
 | Charts | lightweight-charts (TradingView), ECharts, Recharts, Canvas |
@@ -21,9 +23,9 @@ Hệ thống phân tích thị trường chứng khoán Việt Nam với biểu 
 | Bot | Telegraf |
 | Data | VNDirect Open API (free) |
 
-## 📦 Cài đặt
+## Cai dat
 
-### Yêu cầu
+### Yeu cau
 - Node.js 20+
 - npm
 
@@ -31,58 +33,49 @@ Hệ thống phân tích thị trường chứng khoán Việt Nam với biểu 
 ```bash
 cd frontend
 npm install
-npm run dev     # http://localhost:5173
+npm run dev       # http://localhost:5173
+npm run build     # Build vao dist/
 ```
 
 ### Functions (Firebase)
 ```bash
 cd functions
 npm install
-npm run serve   # Local emulator
+npm run serve     # Local emulator
 ```
 
-## 🚢 Deploy
+## Deploy
 
 ### GitHub Pages (Frontend)
-1. Push lên branch `main` → GitHub Actions tự động build & deploy
-2. Vào Settings → Pages → chọn source "GitHub Actions"
+Push len branch `main` -> GitHub Actions tu dong build & deploy.  
+URL: `https://trungkiendang.github.io/StockMarket/`
 
 ### Firebase (Backend)
 ```bash
-# Cài firebase-tools
 npm install -g firebase-tools
-
-# Login
 firebase login
-
-# Set project
 firebase use stockviz-xxxxx
-
-# Deploy
 firebase deploy
-
-# Setup Telegram webhook (sau deploy)
-curl https://us-central1-stockviz-xxxxx.cloudfunctions.net/setupTelegramWebhook
 ```
 
-## 🤖 Telegram Bot Commands
+## Telegram Bot Commands
 
-| Command | Mô tả |
+| Command | Mo ta |
 |---------|-------|
-| `/start` | Đăng ký + hướng dẫn |
-| `/watch VNM` | Thêm mã vào watchlist |
-| `/unwatch VNM` | Xóa khỏi watchlist |
-| `/list` | Xem watchlist + giá |
-| `/alert VNM 120000` | Báo khi VNM > 120,000 |
-| `/price VNM` | Giá real-time |
-| `/top` | Top khối lượng hôm nay |
+| `/start` | Dang ky + huong dan |
+| `/watch VNM` | Them ma vao watchlist |
+| `/unwatch VNM` | Xoa khoi watchlist |
+| `/list` | Xem watchlist + gia |
+| `/alert VNM 120000` | Bao khi VNM > 120,000 |
+| `/price VNM` | Gia real-time |
+| `/top` | Top khoi luong hom nay |
 
-## 📁 Cấu trúc
+## Cau truc
 
 ```
 ├── frontend/          # React App
 │   ├── src/
-│   │   ├── charts/    # Biểu đồ
+│   │   ├── charts/    # Bieu do
 │   │   ├── pages/     # 8 trang
 │   │   ├── services/  # API + WebSocket
 │   │   └── utils/     # Indicators + Format
@@ -96,18 +89,17 @@ curl https://us-central1-stockviz-xxxxx.cloudfunctions.net/setupTelegramWebhook
 └── .github/workflows/ # CI/CD
 ```
 
-## 🔧 Environment Variables (Functions)
+## Environment Variables (Functions)
 
-| Variable | Mô tả |
+| Variable | Mo ta |
 |----------|-------|
-| `TELEGRAM_BOT_TOKEN` | Token từ @BotFather |
+| `TELEGRAM_BOT_TOKEN` | Token tu @BotFather |
 | `TELEGRAM_BOT_URL` | Cloud Functions URL |
 
-## 📊 Nguồn dữ liệu
+## Nguon du lieu
 
-- **VNDirect Open API**: `https://finfo-api.vndirect.com.vn/v4/`
-- **Push Stream**: `wss://pushstream.vndirect.com.vn/market`
+- **VNDirect Open API**: `https://api-finfo.vndirect.com.vn/v4/`
 
-## 📝 Giấy phép
+## Giay phep
 
 MIT

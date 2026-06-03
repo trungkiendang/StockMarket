@@ -92,25 +92,23 @@ export default function TechnicalAnalysis() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h2 className="text-xl font-bold text-white">Phân tích kỹ thuật</h2>
-          <p className="text-sm text-gray-400">Biểu đồ đa khung + chỉ báo nâng cao</p>
+          <h2 className="text-lg sm:text-xl font-bold text-white">Phân tích kỹ thuật</h2>
+          <p className="text-xs sm:text-sm text-gray-400">Biểu đồ đa khung + chỉ báo nâng cao</p>
         </div>
-        <form onSubmit={handleSearch} className="flex gap-2">
-          <div className="flex items-center gap-2">
-            <label className="text-xs text-gray-400">Brick size:</label>
-            <input
-              type="number"
-              value={brickSize}
-              onChange={(e) => setBrickSize(Number(e.target.value))}
-              className="w-16 bg-gray-800 text-white text-xs rounded px-2 py-1.5 border border-gray-700"
-              min={0.1}
-              max={10}
-              step={0.1}
-            />
-          </div>
+        <form onSubmit={handleSearch} className="flex flex-wrap gap-2 items-center">
+          <label className="text-xs text-gray-400">Brick:</label>
+          <input
+            type="number"
+            value={brickSize}
+            onChange={(e) => setBrickSize(Number(e.target.value))}
+            className="w-16 bg-gray-800 text-white text-xs rounded px-2 py-1.5 border border-gray-700"
+            min={0.1}
+            max={10}
+            step={0.1}
+          />
           <input
             type="text"
             value={inputSymbol}
@@ -131,7 +129,7 @@ export default function TechnicalAnalysis() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
           <h3 className="text-sm font-medium text-gray-300 mb-3">RSI (14)</h3>
           <TechnicalIndicators
@@ -152,7 +150,7 @@ export default function TechnicalAnalysis() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
           <h3 className="text-sm font-medium text-gray-300 mb-3">Renko Chart (brick: {brickSize}%)</h3>
           <RenkoChart bricks={bricks} brickSize={brickSize} width={500} height={350} />
