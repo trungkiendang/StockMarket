@@ -43,14 +43,14 @@ export default function Alerts() {
 
       <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
         <h3 className="text-sm font-medium text-gray-300 mb-4">Tạo cảnh báo mới</h3>
-        <div className="flex gap-3 items-end">
+        <div className="flex flex-wrap gap-3 items-end">
           <div>
             <label className="text-xs text-gray-400 block mb-1">Mã CP</label>
             <input
               type="text"
               value={symbol}
               onChange={(e) => setSymbol(e.target.value.toUpperCase())}
-              className="bg-gray-800 text-white text-sm rounded-lg px-3 py-2 border border-gray-700 focus:outline-none focus:border-indigo-500 w-20"
+              className="bg-gray-800 text-white text-sm rounded-lg px-3 py-2 border border-gray-700 focus:outline-none focus:border-indigo-500 w-24 min-w-0"
             />
           </div>
           <div>

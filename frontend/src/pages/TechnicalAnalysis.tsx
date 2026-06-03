@@ -113,7 +113,7 @@ export default function TechnicalAnalysis() {
             type="text"
             value={inputSymbol}
             onChange={(e) => setInputSymbol(e.target.value)}
-            className="bg-gray-800 text-white text-sm rounded-lg px-4 py-2 border border-gray-700 focus:outline-none focus:border-indigo-500 w-24"
+            className="bg-gray-800 text-white text-sm rounded-lg px-4 py-2 border border-gray-700 focus:outline-none focus:border-indigo-500 w-24 sm:w-28 min-w-0"
             placeholder="Mã CP"
           />
           <button type="submit" className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-indigo-700">

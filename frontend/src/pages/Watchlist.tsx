@@ -68,13 +68,13 @@ export default function Watchlist() {
         <p className="text-sm text-gray-400">Danh sách cổ phiếu theo dõi (lưu trên trình duyệt)</p>
       </div>
 
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value.toUpperCase())}
           onKeyDown={(e) => e.key === 'Enter' && addSymbol()}
-          className="bg-gray-800 text-white text-sm rounded-lg px-4 py-2 border border-gray-700 focus:outline-none focus:border-indigo-500 w-24"
+          className="bg-gray-800 text-white text-sm rounded-lg px-4 py-2 border border-gray-700 focus:outline-none focus:border-indigo-500 w-24 min-w-0"
           placeholder="Mã CP"
         />
         <button onClick={addSymbol} className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-indigo-700">

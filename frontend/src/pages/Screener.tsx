@@ -41,14 +41,14 @@ export default function Screener() {
         <p className="text-sm text-gray-400">Lọc cổ phiếu theo điều kiện</p>
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex flex-wrap items-center gap-4">
         <div className="flex items-center gap-2">
           <label className="text-xs text-gray-400">P/E từ:</label>
-          <input type="number" value={minPE} onChange={(e) => setMinPE(e.target.value)} className="w-20 bg-gray-800 text-white text-xs rounded px-2 py-1.5 border border-gray-700" />
+          <input type="number" value={minPE} onChange={(e) => setMinPE(e.target.value)} className="w-24 sm:w-28 bg-gray-800 text-white text-xs rounded px-2 py-1.5 border border-gray-700" />
         </div>
         <div className="flex items-center gap-2">
           <label className="text-xs text-gray-400">đến:</label>
-          <input type="number" value={maxPE} onChange={(e) => setMaxPE(e.target.value)} className="w-20 bg-gray-800 text-white text-xs rounded px-2 py-1.5 border border-gray-700" />
+          <input type="number" value={maxPE} onChange={(e) => setMaxPE(e.target.value)} className="w-24 sm:w-28 bg-gray-800 text-white text-xs rounded px-2 py-1.5 border border-gray-700" />
         </div>
       </div>
 
