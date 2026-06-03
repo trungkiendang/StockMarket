@@ -1,4 +1,7 @@
 import { NavLink } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import type { AuthorInfo } from '../../services/author'
+import { fetchAuthorInfo } from '../../services/author'
 
 const navItems = [
   { to: '/', label: 'Tổng quan', icon: '📊' },
@@ -17,6 +20,12 @@ interface Props {
 }
 
 export default function Sidebar({ open, onClose }: Props) {
+  const [author, setAuthor] = useState<AuthorInfo | null>(null)
+
+  useEffect(() => {
+    fetchAuthorInfo().then(setAuthor)
+  }, [])
+
   return (
     <>
       {open && (
@@ -52,8 +61,16 @@ export default function Sidebar({ open, onClose }: Props) {
             </NavLink>
           ))}
         </nav>
-        <div className="p-3 border-t border-gray-800 text-xs text-gray-600">
-          Dữ liệu từ VNDirect • Real-time
+        <div className="p-3 border-t border-gray-800 text-xs text-gray-500 space-y-1">
+          {author ? (
+            <>
+              <div className="font-medium text-gray-400 truncate">{author.name}</div>
+              <div className="truncate">{author.roles.slice(0, 2).join(' • ')}</div>
+              <div className="text-gray-600 truncate">{author.email}</div>
+            </>
+          ) : (
+            <div className="text-gray-600">Dữ liệu từ VNDirect • Real-time</div>
+          )}
         </div>
       </aside>
     </>
