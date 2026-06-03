@@ -11,7 +11,7 @@ admin.initializeApp()
 export const stockProxy = onRequest(async (req: express.Request, res: express.Response) => {
   const path = req.path.replace('/api/', '')
   const queryString = req.url.includes('?') ? req.url.substring(req.url.indexOf('?')) : ''
-  const targetUrl = `https://finfo-api.vndirect.com.vn/v4/${path}${queryString}`
+  const targetUrl = `https://api-finfo.vndirect.com.vn/v4/${path}${queryString}`
 
   try {
     const response = await fetch(targetUrl)
