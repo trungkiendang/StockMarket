@@ -77,6 +77,8 @@ export default function Dashboard() {
         ))}
       </div>
 
+      <div className="text-[10px] text-gray-600">Nguồn: VNDirect Open API • Chỉ số thị trường real-time</div>
+
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-3 sm:p-4">
           <div className="text-xs text-gray-500">Mã tăng</div>
@@ -100,6 +102,7 @@ export default function Dashboard() {
         <div className="md:col-span-2 bg-gray-900 rounded-xl border border-gray-800 p-4">
           <h3 className="text-sm font-medium text-gray-300 mb-4">Heatmap vốn hóa theo ngành</h3>
           <HeatmapChart data={heatmapData} height={400} />
+          <div className="text-[10px] text-gray-600 mt-2">Nguồn: VNDirect Open API</div>
         </div>
 
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">

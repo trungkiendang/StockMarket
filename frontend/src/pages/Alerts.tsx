@@ -83,7 +83,10 @@ export default function Alerts() {
       </div>
 
       <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
-        <h3 className="text-sm font-medium text-gray-300 mb-4">Danh sách cảnh báo</h3>
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-sm font-medium text-gray-300">Danh sách cảnh báo</h3>
+          <span className="text-[10px] text-gray-600">Dữ liệu lưu trên trình duyệt</span>
+        </div>
         {alerts.length === 0 ? (
           <p className="text-center py-8 text-gray-500 text-sm">Chưa có cảnh báo nào</p>
         ) : (

@@ -119,6 +119,8 @@ export default function Comparison() {
         </div>
       )}
 
+      <div className="text-[10px] text-gray-600">Nguồn: VNDirect Open API • Hiệu suất chuẩn hóa về 100%</div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
         {stocks.map((s, i) => {
           const perf = s.data.length > 0 ? ((s.data[s.data.length - 1]?.price || 100) - 100) : 0

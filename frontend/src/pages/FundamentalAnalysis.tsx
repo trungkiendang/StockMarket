@@ -46,6 +46,12 @@ export default function FundamentalAnalysis({ symbol: propSymbol }: Props) {
         </form>
       </div>
 
+      <div className="flex items-center gap-2 text-[10px] text-gray-600">
+        <span>Nguồn: VNDirect Open API</span>
+        <span>•</span>
+        <span className="text-yellow-500/70">Chỉ số tài chính là dữ liệu ước tính</span>
+      </div>
+
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
         {[
           { label: 'P/E', value: ratios?.pe, color: ratios && ratios.pe < 15 ? 'text-market-up' : ratios && ratios.pe > 30 ? 'text-market-down' : 'text-yellow-400' },

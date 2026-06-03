@@ -53,6 +53,7 @@ export default function Screener() {
       </div>
 
       <div className="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
+        <div className="px-4 pt-3 text-[10px] text-gray-600">Nguồn: VNDirect Open API</div>
         <table className="w-full text-sm">
           <thead>
             <tr className="text-gray-400 border-b border-gray-800 bg-gray-900/50">

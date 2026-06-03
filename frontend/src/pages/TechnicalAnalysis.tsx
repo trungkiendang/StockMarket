@@ -123,11 +123,16 @@ export default function TechnicalAnalysis() {
       </div>
 
       <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
-        <h3 className="text-sm font-medium text-gray-300 mb-3">Biểu đồ nến + MA20/MA50 + Bollinger Bands</h3>
-        <div className="h-[400px]">
-          <CandlestickChart data={data} ma20={ma20} ma50={ma50} height={400} />
+          <h3 className="text-sm font-medium text-gray-300 mb-3">Biểu đồ nến + MA20/MA50 + Bollinger Bands</h3>
+          <div className="h-[400px]">
+            <CandlestickChart data={data} ma20={ma20} ma50={ma50} height={400} />
+          </div>
+          <div className="flex gap-3 mt-2 text-[10px] text-gray-600">
+            <span>Nguồn: VNDirect Open API</span>
+            <span>•</span>
+            <span>MA20/MA50/BB: Tính toán từ giá đóng cửa</span>
+          </div>
         </div>
-      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
@@ -136,6 +141,7 @@ export default function TechnicalAnalysis() {
             indicators={[{ title: 'RSI', data: rsiSeries, color: '#a78bfa' }]}
             height={150}
           />
+          <div className="text-[10px] text-gray-600 mt-2">Nguồn: Tính toán từ giá đóng cửa</div>
         </div>
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
           <h3 className="text-sm font-medium text-gray-300 mb-3">MACD (12, 26, 9)</h3>
@@ -154,10 +160,12 @@ export default function TechnicalAnalysis() {
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
           <h3 className="text-sm font-medium text-gray-300 mb-3">Renko Chart (brick: {brickSize}%)</h3>
           <RenkoChart bricks={bricks} brickSize={brickSize} width={500} height={350} />
+          <div className="text-[10px] text-gray-600 mt-2">Nguồn: Tính toán từ giá đóng cửa</div>
         </div>
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
           <h3 className="text-sm font-medium text-gray-300 mb-3">Point & Figure (box: {brickSize}%)</h3>
           <PointFigureChart columns={pfColumns} boxSize={brickSize} width={500} height={350} />
+          <div className="text-[10px] text-gray-600 mt-2">Nguồn: Tính toán từ giá đóng cửa</div>
         </div>
       </div>
     </div>

@@ -10,7 +10,9 @@ export default function Header({ onSearch, onMenuClick }: Props) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    if (!query.trim()) return
     onSearch?.(query.toUpperCase())
+    setQuery('')
   }
 
   return (

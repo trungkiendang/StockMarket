@@ -93,6 +93,7 @@ export default function StockDetail() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
         <div className="md:col-span-2 bg-gray-900 rounded-xl border border-gray-800 p-4">
           <CandlestickChart data={data} volumeData={volumeData} ma20={ma20} ma50={ma50} height={450} />
+          <div className="text-[10px] text-gray-600 mt-2">Nguồn: VNDirect Open API • Chỉ báo tính toán từ giá đóng cửa</div>
         </div>
         <div className="space-y-4">
           {ratios && (
